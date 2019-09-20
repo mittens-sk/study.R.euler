@@ -22,40 +22,40 @@ c(
 01,70,54,71,83,51,54,69,16,92,33,48,61,43,52,01,89,19,67,48
 ), 20,20)
 
-answer=1
+answer<-1
 
 for (i in 1:20)
   for (j in 1:17) {
-    result<-a[i][j]*a[i][j+1]*a[i][j+2]*a[i][j+3]
-    if(answer<result) {
+    result<-a[i,j]*a[i,j+1]*a[i,j+2]*a[i,j+3]
+    if(result>answer) {
       answer<-result
-      print(paste0(a[i][j],"*",a[i][j+1],"*",a[i][j+2],"*",a[i][j+3],"=",answer))
+      print(paste0(i,":",a[i,j],"*",a[i,j+1],"*",a[i,j+2],"*",a[i,j+3],"=",answer))
     }
   }
 
 for (i in 1:17)
   for (j in 1:20) {
-    result<-a[i][j]*a[i+1][j]*a[i+2][j]*a[i+3][j]
-    if (answer<result) {
+    result<-a[i,j]*a[i+1,j]*a[i+2,j]*a[i+3,j]
+    if (result>answer) {
       answer<-result
-      print(paste0(a[i][j],"*",a[i+1][j],"*",a[i+2][j],"*",a[i+3][j],"=",answer))
+      print(paste0(i,":",a[i,j],"*",a[i+1,j],"*",a[i+2,j],"*",a[i+3,j],"=",answer))
     }
   }
 
 for (i in 1:17)
   for (j in 1:17) {
-    result<-a[i][j]*a[i+1][j+1]*a[i+2][j+2]*a[i+3][j+3]
+    result<-a[i,j]*a[i+1,j+1]*a[i+2,j+2]*a[i+3,j+3]
     if (answer<result) {
       answer<-result
-      print(paste0(a[i][j],"*",a[i+1][j+1],"*",a[i+2][j+2],"*",a[i+3][j+3],"=",answer))
+      print(paste0(i,":",a[i,j],"*",a[i+1,j+1],"*",a[i+2,j+2],"*",a[i+3,j+3],"=",answer))
     }
   }
 
 for (i in 4:20)
-  for (j in 4:20) {
-    result<-a[i][j]*a[i-1][j-1]*a[i-2][j-2]*a[i-3][j-3]
+  for (j in 1:17) {
+    result<-a[i,j]*a[i-1,j+1]*a[i-2,j+2]*a[i-3,j+3]
     if (answer<result) {
       answer<-result
-      print(paste0(a[i][j],"*",a[i-1][j-1],"*",a[i-2][j-2],"*",a[i-3][j-3],"=",answer))
+      print(paste0(i,":",a[i,j],"*",a[i-1,j+1],"*",a[i-2,j+2],"*",a[i-3,j+3],"=",answer))
     }
   }
