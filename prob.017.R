@@ -31,13 +31,19 @@ cc<-c(6 # twenty
 ,6 # ninety
 )
 
-sum(a) + sum(b) 
-  
-sum(cc*length(a))
+sum(a) + sum(b) # 1 ~ 19
 
-a*7
+sum(cc*length(a), a*length(cc)) + sum(cc) # 20 ~ 99
+
+sum(a) + 7*length(a) # 100, 200, 300, 400, 500, 600, 700, 800, 900
+
+(sum(a) + 7*length(a) + 3) * 99 + (sum(a) + sum(b) + sum(cc*length(a), a*length(cc)) + sum(cc))
+
+11 # 1,000
+
+106+748+99+10952+11
 
 7 # hundred
 8 # thousand
 
-and
+3 # and
